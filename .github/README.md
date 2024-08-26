@@ -1,4 +1,4 @@
-
+![GitFav](https://github.com/user-attachments/assets/63cc4289-c608-4a88-9ee6-cc787050f346)
 ## 🖥️ Projeto
 
 O projeto "GitFav" é uma aplicação web para favoritar usuários do GitHub, permitindo que os usuários busquem, adicionem e removam perfis da lista de favoritos. A aplicação utiliza a API do GitHub para buscar informações sobre os usuários e armazena os dados dos favoritos no local storage do navegador, garantindo a persistência entre sessões. Este projeto foi solicitado durante o desafio do Stage 06 da trilha Explorer da Rocketseat.
