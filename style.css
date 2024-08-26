@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  --bg-color: black;
+  --text-color: hsl(240, 9%, 89%);
+  --nofav-text-color: hsl(189, 4%, 32%);
+  --remove-button-color: hsl(355, 91%, 66%);
+  --button-color: hsl(195, 91%, 25%);
+  --white-color: white;
+  --button-hover-bg: var(--button-color);
+  --primary-color: hsla(196, 61%, 6%, 0.5);
+  --secondary-color: hsl(191, 65%, 7%);
+  --thead-color: hsl(194, 72%, 13%);
+  --border-color: hsl(191, 31%, 42%);
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--bg-color);
+}
+
+body * {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip-path: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Estilos da barra de rolagem */
+tbody::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+tbody::-webkit-scrollbar-track {
+  background: var(--thead-color);
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 1rem;
+}
+
+#app {
+  height: 100vh;
+  width: min(112rem, 95%);
+  margin: 0 auto;
+  padding: 11.6rem 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.search input {
+  height: 4.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.6rem;
+  width: 43rem;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 1.6rem;
+}
+
+.search input::placeholder {
+  font-size: 1.6rem;
+}
+
+.search input:focus {
+  outline: 2px solid var(--border-color);
+}
+
+.search button {
+  height: 4.8rem;
+  padding: 1.2rem 3.2rem;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--white-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search button svg {
+  fill: var(--white-color);
+}
+
+.search button:hover {
+  background-color: var(--white-color);
+  color: var(--button-color);
+}
+
+.search button:hover svg {
+  fill: var(--button-color);
+}
+
+/* Estilização da Tabela */
+.table-container {
+  margin-top: 8.7rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 1.2rem;
+  outline: 1px solid var(--border-color);
+}
+
+table * {
+  font-size: 2rem;
+}
+
+thead {
+  background-color: var(--thead-color);
+  text-align: left;
+}
+
+thead tr {
+  display: flex;
+}
+
+tr th {
+  padding: 1.6rem 0 1.6rem 4rem;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 52.2rem;
+  overflow-y: auto;
+}
+
+tbody tr {
+  display: flex;
+  align-items: center;
+  transition: filter 0.3s;
+}
+
+tbody tr:hover {
+  filter: contrast(0.85);
+}
+
+tr td {
+  padding: 2.4rem 0 2.4rem 4rem;
+}
+
+tbody tr:nth-child(odd) {
+  background: var(--primary-color);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--secondary-color);
+}
+
+tr th:first-child,
+tr td:not(.no-favorites):first-child {
+  width: min(50.4rem, 43vw);
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: min(21.8rem, 21vw);
+}
+
+tr th:nth-child(3),
+tr td:nth-child(3) {
+  width: min(21.8rem, 21vw);
+}
+
+tr th:last-child,
+tr td:not(.no-favorites):last-child {
+  width: min(17.8rem, 15vw);
+}
+
+table tbody tr + tr {
+  border-top: 1px solid var(--border-color);
+}
+
+td.no-favorites {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52.2rem;
+}
+
+td.no-favorites img {
+  width: 13.2rem;
+}
+
+td.no-favorites p {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 4rem;
+  color: var(--nofav-text-color);
+}
+
+/* Usuários da tabela e Ações */
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+td.user img:hover {
+  transform: scale(1.4);
+}
+
+td.user a {
+  text-decoration: none;
+  color: inherit;
+}
+
+td.user p,
+.repositories,
+.followers,
+td .remove {
+  font-weight: bold;
+}
+
+td .remove {
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--remove-button-color);
+  cursor: pointer;
+  transition: filter 0.3s, transform 0.3s;
+}
+
+td .remove:hover {
+  filter: contrast(2.5);
+  transform: scale(1.05);
+}
+
+/* Estilização do SweetAlert */
+.toast-text, 
+.toast-icon, 
+.swal-button,
+.swal-icon {
+  font-size: 1.6rem !important;
+}
+
+.swal-popup {
+  border: 1px solid var(--border-color);
+  width: auto;
+}
+
+.swal-icon {
+  width: 8rem;
+  height: 8rem;
+}
+
+.swal-icon.swal2-warning {
+  border: 4px solid #ff5e00;
+}
+
+.swal-icon.swal2-warning,
+.swal-icon.swal2-warning > .swal2-icon-content {
+  color: #ff5e00;
+}
+
+.swal-title {
+  font-size: 3rem;
+}
+
+.swal-text {
+  font-size: 2.4rem !important;
+}
+
+.toast-progress-bar {
+  background: #a5dc864d;
+}
