@@ -26,4 +26,4 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - **Eventos:** Lida com eventos de teclado e cliques para adicionar e remover usuários.
 
-- **SweetAlert2:**: É uma biblioteca para exibir diálogos modais customizados. Utilizado para exibir notificações estilizadas, incluindo mensagens de sucesso, erro e confirmação. Foi totalmente estilizado para se adequar as cores do projeto.
+- **SweetAlert2:** É uma biblioteca para exibir diálogos modais customizados. Utilizado para exibir notificações estilizadas, incluindo mensagens de sucesso, erro e confirmação. Foi totalmente estilizado para se adequar as cores do projeto.
